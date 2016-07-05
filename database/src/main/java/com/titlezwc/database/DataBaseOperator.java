@@ -13,7 +13,7 @@ public class DataBaseOperator<T> {
     private BaseOperator<T> Operator;
 
     public DataBaseOperator(Class entityClass, String path) {
-        DataBaseConfig config = new DataBaseConfig.Builder().setDatabaseName(path).build();
+        DataBaseConfig config = new DataBaseConfig.Builder().setDatabasePath(path).build();
         DataBaseManager dbm = DataBaseManager.getInstance().setConfig(config);
         Operator = dbm.getOperator(entityClass);
     }
